@@ -4,7 +4,7 @@
   "description": "personal site for Bryan Levay",
   "main": "server.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "run": "node server.js"
   },
   "author": "Bryan Levay <bryan@bryanlevay.com>",
   "license": "ISC",

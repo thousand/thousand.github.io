@@ -5,17 +5,28 @@
 }
 
 :root {
-  background-color: #444;
+  background-color: var(--bg-light);
   background-image: url('/img/bg-pattern.svg');
   background-size: cover;
   background-position: top center;
-  font-family: Niagara, serif;
+  font-family: jaf-facitweb, sans-serif;
+  font-weight: 400;
+  line-height: 1.44;
   font-synthesis: none;
-  color: #eee;
+  color: var(--fg);
 
   --spacing: 1.5rem;
   --section-separation: calc(var(--spacing) * 2);
   --brand-color: #5cccf5;
+  --bg-light: #444;
+  --bg-dark: #222;
+  --fg: #eee;
+}
+
+::selection {
+  background-color: var(--brand-color);
+  color: var(--bg-dark);
+  text-shadow: none;
 }
 
 body {
@@ -25,21 +36,25 @@ body {
 }
 
 section {
-  padding: var(--spacing);
+  overflow: auto;
   background-color: #333;
+  box-sizing: border-box;
   margin: var(--section-separation) auto;
   width: calc(100vw - (var(--spacing) * 6));
   max-width: 50rem;
   /* block shadow, faux border*/
   box-shadow: 0 0 0 0.2vmin #222,
-    calc(var(--spacing) * 0.60) var(--spacing) 0 rgba(0,0,0,0.5);
+    calc(var(--spacing) * 0.60) var(--spacing) 0 var(--bg-dark);
 }
 
 a {
   color: var(--brand-color);
 }
 
-h1, h2, h3, h4, h5, h6 { font-weight: inherit; }
+h1, h2, h3, h4, h5, h6 {
+  /*font-family: good-headline-web-pro-wide, sans-serif;*/
+  font-weight: 700;
+}
 
 .main-title {
   font-family: "Montage Semi Condensed", serif;
@@ -52,17 +67,38 @@ h1, h2, h3, h4, h5, h6 { font-weight: inherit; }
   --shadow-offset-base: 0.04em;
   --h-shadow-offset: calc(var(--shadow-offset-base) * 3);
   --v-shadow-offset: calc(var(--shadow-offset-base) * 5);
-  text-shadow: var(--h-shadow-offset) var(--v-shadow-offset) 0 rgba(0,0,0,0.5);
+  text-shadow: var(--h-shadow-offset) var(--v-shadow-offset) 0 var(--bg-dark);
 }
 
-.places {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  grid-gap: var(--spacing);
+.section-head {
+  color: var(--brand-color);
+  margin: var(--spacing);
+  text-align: center;
+  font-size: 2rem;
+}
+
+.places-grid {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin: calc(var(--spacing) / 2);
 }
 
 .place {
+  flex: 0 1 64px;
+  margin: calc(var(--spacing) / 2);
+}
 
+.place svg {
+  color: var(--fg);
+}
+
+.place a:hover svg {
+  color: var(--brand-color);
+}
+
+.blurb {
+  padding: 0 var(--spacing);
 }
 
 @media (min-width: 1000px) {
