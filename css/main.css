@@ -35,7 +35,7 @@ section {
   background-color: #333;
   box-sizing: border-box;
   margin: var(--section-separation) auto;
-  width: calc(100vw - (var(--spacing) * 6));
+  width: calc(100vw - (var(--spacing) * 2));
   max-width: 50rem;
   /* faux border, drop shadow*/
   box-shadow: 0 0 0 0.2vmin #222,
@@ -44,7 +44,6 @@ section {
 
 a {
   color: var(--brand-color);
-  /*transition: color 1s;*/
 }
 
 a:hover {
@@ -53,6 +52,12 @@ a:hover {
 
 h1, h2, h3, h4, h5, h6 {
   font-weight: 700;
+}
+
+.hidden-text {
+  position: absolute;
+  top: -99999px;
+  left: -99999px;
 }
 
 .main-title {
@@ -98,6 +103,34 @@ h1, h2, h3, h4, h5, h6 {
 
 .blurb {
   padding: 0 var(--spacing);
+}
+
+.list-for-nerds {
+
+}
+
+.list-for-nerds dt,
+.list-for-nerds dd {
+  display: inline;
+}
+
+.list-for-nerds dt {
+  font-weight: bold;
+}
+.list-for-nerds dt:nth-of-type(1):before {
+  content: none;
+  white-space: normal;
+}
+.list-for-nerds dt::before {
+  content: "\A";
+  white-space: pre;
+}
+
+.list-for-nerds dd {
+  margin-left: 0;
+}
+.list-for-nerds dd::before {
+  content: " • ";
 }
 
 @media (min-width: 1000px) {
