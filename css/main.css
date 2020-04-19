@@ -24,6 +24,10 @@
   text-shadow: none;
 }
 
+.shiny {
+  background-image: url('/img/bg-pattern-anim.svg');
+}
+
 body {
   margin: 0;
   padding: 0;
@@ -42,8 +46,19 @@ section {
     calc(var(--spacing) * 0.60) var(--spacing) 0 var(--bg-dark);
 }
 
+.shiny section {
+  backdrop-filter: hue-rotate(137deg) blur(5px);
+  background-color: rgba(0,0,0,0.5);
+  box-shadow: 0 0 0 0.2vmin rgba(0,0,0,0.7),
+    calc(var(--spacing) * 0.60) var(--spacing) 0 rgba(0,0,0,0.3);
+}
+
 a {
   color: var(--brand-color);
+}
+
+.shiny a {
+  animation: colorshift 11s infinite linear alternate-reverse;
 }
 
 a:hover {
@@ -74,11 +89,20 @@ h1, h2, h3, h4, h5, h6 {
   text-shadow: var(--h-shadow-offset) var(--v-shadow-offset) 0 var(--bg-dark);
 }
 
+.shiny .main-title {
+  text-shadow: var(--h-shadow-offset) var(--v-shadow-offset) 0 rgba(0,0,0,0.3);
+}
+
 .section-head {
   color: var(--brand-color);
   margin: var(--spacing);
   text-align: center;
   font-size: 2rem;
+}
+
+.shiny .main-title,
+.shiny .section-head {
+  animation: colorshift 7s linear infinite alternate;
 }
 
 .places-grid {
@@ -99,6 +123,10 @@ h1, h2, h3, h4, h5, h6 {
 
 .place a:hover svg {
   color: inherit;
+}
+
+.shiny .place a svg {
+  animation: colorshift 11s infinite linear alternate-reverse;
 }
 
 .blurb {
@@ -128,6 +156,7 @@ h1, h2, h3, h4, h5, h6 {
 
 .list-for-nerds dd {
   margin-left: 0;
+  display: inline-block;
 }
 .list-for-nerds dd::before {
   content: " • ";
