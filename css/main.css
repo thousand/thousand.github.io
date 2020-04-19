@@ -46,6 +46,13 @@ section {
     calc(var(--spacing) * 0.60) var(--spacing) 0 var(--bg-dark);
 }
 
+.shiny section {
+  backdrop-filter: hue-rotate(137deg) blur(5px);
+  background-color: rgba(0,0,0,0.5);
+  box-shadow: 0 0 0 0.2vmin rgba(0,0,0,0.7),
+    calc(var(--spacing) * 0.60) var(--spacing) 0 rgba(0,0,0,0.3);
+}
+
 a {
   color: var(--brand-color);
 }
@@ -80,6 +87,10 @@ h1, h2, h3, h4, h5, h6 {
   --h-shadow-offset: calc(var(--shadow-offset-base) * 3);
   --v-shadow-offset: calc(var(--shadow-offset-base) * 5);
   text-shadow: var(--h-shadow-offset) var(--v-shadow-offset) 0 var(--bg-dark);
+}
+
+.shiny .main-title {
+  text-shadow: var(--h-shadow-offset) var(--v-shadow-offset) 0 rgba(0,0,0,0.3);
 }
 
 .section-head {
@@ -145,6 +156,7 @@ h1, h2, h3, h4, h5, h6 {
 
 .list-for-nerds dd {
   margin-left: 0;
+  display: inline-block;
 }
 .list-for-nerds dd::before {
   content: " • ";
