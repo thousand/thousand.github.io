@@ -24,6 +24,10 @@
   text-shadow: none;
 }
 
+.shiny {
+  background-image: url('/img/bg-pattern-anim.svg');
+}
+
 body {
   margin: 0;
   padding: 0;
@@ -44,6 +48,10 @@ section {
 
 a {
   color: var(--brand-color);
+}
+
+.shiny a {
+  animation: colorshift 11s infinite linear alternate-reverse;
 }
 
 a:hover {
@@ -81,6 +89,11 @@ h1, h2, h3, h4, h5, h6 {
   font-size: 2rem;
 }
 
+.shiny .main-title,
+.shiny .section-head {
+  animation: colorshift 7s linear infinite alternate;
+}
+
 .places-grid {
   display: flex;
   justify-content: center;
@@ -99,6 +112,10 @@ h1, h2, h3, h4, h5, h6 {
 
 .place a:hover svg {
   color: inherit;
+}
+
+.shiny .place a svg {
+  animation: colorshift 11s infinite linear alternate-reverse;
 }
 
 .blurb {
