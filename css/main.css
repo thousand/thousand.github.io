@@ -105,6 +105,18 @@ h1, h2, h3, h4, h5, h6 {
   animation: colorshift 7s linear infinite alternate;
 }
 
+.creative-grid {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin: calc(var(--spacing) / 2);
+}
+
+.creative-thing {
+  flex: 0 1 calc(50% - var(--spacing));
+  margin: calc(var(--spacing) / 2);
+}
+
 .places-grid {
   display: flex;
   justify-content: center;
