@@ -1,10 +1,13 @@
+* {
+  font-variation-settings: 'wght' var(--wght, 60), 'shrp' var(--shrp, 20);
+}
+
 :root {
   background-color: var(--bg-light);
   background-image: url('/img/bg-pattern.svg');
-  background-size: cover;
+  background-size: 1600px 1600px;
   background-position: top center;
-  font-family: jaf-facit, sans-serif;
-  font-weight: 400;
+  font-family: gwen-variable-wf, sans-serif;
   line-height: 1.44;
   font-synthesis: none;
   color: var(--fg);
@@ -53,12 +56,16 @@ section {
     calc(var(--spacing) * 0.60) var(--spacing) 0 rgba(0,0,0,0.3);
 }
 
-a {
+a,
+strong {
   color: var(--brand-color);
+  --wght: 90;
+  --shrp: 66;
 }
 
 .shiny a {
   animation: colorshift 11s infinite linear alternate-reverse;
+  transition: color 2s linear;
 }
 
 a:hover {
@@ -66,7 +73,8 @@ a:hover {
 }
 
 h1, h2, h3, h4, h5, h6 {
-  font-weight: 700;
+  --wght: 130;
+  --shrp: 60;
 }
 
 .hidden-text {
@@ -76,13 +84,13 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .main-title {
-  font-family: montage-sc, serif;
-  font-feature-settings: "kern" 1, "liga" 1;
-  font-weight: 400;
   margin: var(--section-separation) 0;
-  font-size: 12vmin;
+  font-size: 14vmin;
   text-align: center;
   color: var(--brand-color);
+  --wght: 180;
+  --shrp: 100;
+
   --shadow-offset-base: 0.04em;
   --h-shadow-offset: calc(var(--shadow-offset-base) * 3);
   --v-shadow-offset: calc(var(--shadow-offset-base) * 5);
@@ -91,13 +99,10 @@ h1, h2, h3, h4, h5, h6 {
 
 .shiny .main-title {
   text-shadow: var(--h-shadow-offset) var(--v-shadow-offset) 0 rgba(0,0,0,0.3);
-}
-
-.section-head {
-  color: var(--brand-color);
+} .section-head { color: var(--brand-color);
   margin: var(--spacing);
   text-align: center;
-  font-size: 2rem;
+  font-size: 2.5rem;
 }
 
 .shiny .main-title,
@@ -114,7 +119,19 @@ h1, h2, h3, h4, h5, h6 {
 
 .creative-thing {
   flex: 0 1 calc(50% - var(--spacing));
-  margin: calc(var(--spacing) / 2);
+  margin: calc(var(--spacing) / 4);
+  padding: calc(var(--spacing) / 4);
+  background-image: url('/img/bg-pattern.svg');
+  background-size: 1600px 1600px;
+  background-position: calc(var(--rando) * 69420px) calc(var(--rando) * -42069px);
+}
+.creative-thing:nth-of-type(4n+0) { --rando: 715; }
+.creative-thing:nth-of-type(4n+1) { --rando: 615; }
+.creative-thing:nth-of-type(4n+2) { --rando: 198; }
+.creative-thing:nth-of-type(4n+3) { --rando: 512; }
+
+iframe {
+  display: block;
 }
 
 .places-grid {
@@ -146,41 +163,20 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .list-for-nerds {
-
+  padding: 0;
+  text-align: center;
 }
 
-.list-for-nerds dt,
-.list-for-nerds dd {
-  display: inline;
-}
-
-.list-for-nerds dt {
-  font-weight: bold;
-}
-.list-for-nerds dt:nth-of-type(1):before {
-  content: none;
-  white-space: normal;
-}
-.list-for-nerds dt::before {
-  content: "\A";
-  white-space: pre;
-}
-
-.list-for-nerds dd {
-  margin-left: 0;
+.list-for-nerds li {
   display: inline-block;
 }
-.list-for-nerds dd::before {
+.list-for-nerds li::before {
   content: " • ";
 }
 
 @media (min-width: 1000px) {
-  :root {
-    background-size: 1000px 1000px;
-  }
-
   .main-title {
-    font-size: 6.5rem;
+    font-size: 8rem;
   }
 
   section {
