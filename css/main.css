@@ -4,7 +4,7 @@
 
 :root {
   background-color: var(--bg-light);
-  background-image: url('/img/bg-pattern.svg');
+  background-image: url('../img/bg-pattern.svg');
   background-size: 1600px 1600px;
   background-position: top center;
   font-family: gwen-variable-wf, sans-serif;
@@ -28,7 +28,7 @@
 }
 
 .shiny {
-  background-image: url('/img/bg-pattern-anim.svg');
+  background-image: url('../img/bg-pattern-anim.svg');
 }
 
 body {
@@ -121,7 +121,7 @@ h1, h2, h3, h4, h5, h6 {
   flex: 0 1 calc(50% - var(--spacing));
   margin: calc(var(--spacing) / 4);
   padding: calc(var(--spacing) / 4);
-  background-image: url('/img/bg-pattern.svg');
+  background-image: url('../img/bg-pattern.svg');
   background-size: 1600px 1600px;
   background-position: calc(var(--rando) * 69420px) calc(var(--rando) * -42069px);
 }
